@@ -8,7 +8,7 @@ from torchvision import datasets, transforms, models
 import numpy as np
 import matplotlib.pyplot as plt
 from torch.amp import GradScaler, autocast
-from tpc_sample_selection import tpc_rp_sampling, extract_features, SimCLRModel, IndexedDataset
+from modified_tpc_sample_selection import tpc_rp_sampling, extract_features, SimCLRModel, IndexedDataset
 from random_sample_selection import random_sampling
 
 # Set environment variable to avoid duplicate library errors
