@@ -8,7 +8,7 @@ from torchvision import datasets, transforms
 import numpy as np
 import matplotlib.pyplot as plt
 from torch.optim import lr_scheduler
-from tpc_sample_selection import tpc_rp_sampling, extract_features, SimCLRModel, IndexedDataset
+from modified_tpc_sample_selection import tpc_rp_sampling, extract_features, SimCLRModel, IndexedDataset
 from random_sample_selection import random_sampling
 
 # Set environment variable to avoid duplicate library errors
@@ -26,7 +26,7 @@ if torch.cuda.is_available():
     torch.cuda.manual_seed_all(seed_value)
 
 # Define device to use GPU if available otherwise "cpu"
-device = torch.device("cuda")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Data preprocessing
 train_transform = transforms.Compose([
