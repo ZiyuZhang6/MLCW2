@@ -171,7 +171,7 @@ class WideResNetBlock(nn.Module):
 
 # Define FlexMatchTrainer for semi-supervised learning
 class FlexMatchTrainer:
-    def __init__(self, selected_samples, model=None, num_classes=10, ema_m=0.999, T=1.0, p_cutoff=0.95, lambda_u=1.0, num_train_iter=1048576):
+    def __init__(self, selected_samples, model=None, num_classes=10, ema_m=0.999, T=1.0, p_cutoff=0.95, lambda_u=1.0, num_train_iter=400000):
         # Initialize model, default to WideResNet if none provided
         self.model = model if model is not None else WideResNet(depth=28, widen_factor=2, num_classes=num_classes).to(device)
         self.num_classes = num_classes
