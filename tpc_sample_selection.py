@@ -1,7 +1,3 @@
-"""
-This script implements Algorithm TPC-RP for sample selection on CIFAR-10 using SimCLR embeddings.
-Key steps: feature extraction with SimCLR, K-means clustering, and typicality-based selection.
-"""
 import os
 import torch
 import numpy as np
